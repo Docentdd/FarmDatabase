@@ -21,12 +21,47 @@ The system handles the following aspects:
 
 ---
 
+---
+
 ## 🗃️ Database Structure
 
 The database includes the following core tables:
 
-- **`role`** – Contains role `id` and `name`.
-- **`user`** – Contains user `id` and `email`.
-- **`user_roles`** – Maps users to roles using `user_id` and `role_id`.
-- **`blog`** – Stores blog `id`, `name`, and `manager_id`.
-- **`article`** – Stores article `id`, `title`, `author_id`, and `blog_id`.
+### 🔐 User & Role Management
+
+- **`role`** – Stores roles with `id` and `name`.
+- **`user`** – Stores users with `id` and `email`.
+- **`user_roles`** – Maps users to roles (`user_id`, `role_id`).
+
+### 📝 Blog Content
+
+- **`blog`** – Stores blogs with `id`, `name`, and `manager_id`.
+- **`article`** – Stores articles with `id`, `title`, `author_id`, and `blog_id`.
+
+### 🐾 Animal Management
+
+- **`animal`** – Stores animal details (`id`, `species`, `name`, `arrival_date`, etc.).
+- **`animal_care`** – Tracks care assignments (`employee_id`, `animal_id`, `care_type`, `care_date`).
+- **`animal_feeding`** – Links animals with food (`animal_id`, `food_id`, `feeding_date`).
+
+### 🏠 Cage Management
+
+- **`cage`** – Stores cage info (`id`, `type_id`, capacity).
+- **`cage_type`** – Defines types of cages (e.g., Small, Large, Aquatic).
+
+### 👨‍🌾 Employee & Position Management
+
+- **`employee`** – Holds employee data (`id`, `full_name`, `age`, `email`).
+- **`employee_position`** – Tracks positions (`employee_id`, `position_id`, `hire_date`, `salary`).
+- **`position`** – Defines job roles (e.g., Vet, Feeder, Cleaner).
+
+### 🍽️ Food & Supplier Management
+
+- **`food`** – Lists food types (`id`, `name`, `price`, `supplier_id`).
+- **`supplier`** – Holds supplier contact info and `start_date`.
+
+---
+
+### 📊 Entity Relationship Diagram
+
+![Farm ERD](ProjectFARM.png)
